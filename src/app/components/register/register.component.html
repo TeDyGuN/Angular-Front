@@ -1,0 +1,37 @@
+<div class="col-md-12">
+  <h2>{{ title }}</h2>
+
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="col-md-5">
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" class="form-control" name="name" #name=ngModel [(ngModel)]="user.name" placeholder="Ingrese un Nombre" required>
+      <span *ngIf="!name.valid && name.touched">
+        El campo es Obligatorio
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="surname">Apellidos</label>
+      <input type="text" class="form-control" name="surname" #surname=ngModel [(ngModel)]="user.surname" placeholder="Ingrese su Apellido" required>
+      <span *ngIf="!surname.valid && surname.touched">
+        El campo es Obligatorio
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" name="email" #email=ngModel [(ngModel)]="user.email" placeholder="Ingrese un Email" required>
+      <span *ngIf="!email.valid && email.touched">
+        El campo es Obligatorio
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="password">Contraseña</label>
+      <input type="password" class="form-control" name="password" #password=ngModel [(ngModel)]="user.password" required>
+      <span *ngIf="!password.valid && password.touched">
+        El campo es Obligatorio
+      </span>
+    </div>
+    <div class="form-group">
+      <input type="submit"  value="Registrarse" class="btn btn-success">
+    </div>
+  </form>
+</div>
