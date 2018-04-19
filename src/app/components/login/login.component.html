@@ -1,5 +1,8 @@
 <div class="col-md-12">
   <h2>{{ title }}</h2>
+  <div class="alert alert-danger" *ngIf="status == 'error'">
+    {{ message }}
+  </div>
   <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="col-md-5">
     <div class="form-group">
       <label for="email">Email</label>

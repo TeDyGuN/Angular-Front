@@ -28,7 +28,7 @@
             <a>{{ identity.name + ' ' + identity.surname}}</a>
           </li>
           <li>
-            <a href="#">
+            <a [routerLink]="['logout', 1]">
               <span class="glyphicon glyphicon-log-out"></span>
               Salir
             </a>
