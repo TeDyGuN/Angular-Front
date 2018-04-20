@@ -16,6 +16,8 @@ export class CarNewComponent implements OnInit {
   private identity:any;
   private token:any;
   private car:Car;
+  public status_car: string;
+  public message_car:string;
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
@@ -38,10 +40,22 @@ export class CarNewComponent implements OnInit {
     this._carService.create(this.token, this.car).subscribe(
         response => {
           console.log(response);
-          this.car = response.car;
+
+          if(response.status== 'success'){
+            this.status_car = response.status;
+            this.message_car = response.message;
+            this.car = response.car;
+            form.reset();
+          }
+          else{
+            this.status_car = 'error';
+            this.message_car = response.message.title;
+          }
         },
         error => {
-          console.log(<any>error);
+
+            console.log(error);
+
         }
     );
   }

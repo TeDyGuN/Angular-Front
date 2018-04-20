@@ -42,10 +42,6 @@ export class LoginComponent implements OnInit {
         }
         else
         {
-
-
-
-
           //token
           this.token = response;
           localStorage.setItem('token', this.token);

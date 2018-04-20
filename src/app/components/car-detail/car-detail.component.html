@@ -1,3 +1,6 @@
-<p>
-  car-detail works!
-</p>
+<div class="col-md-12" *ngIf="car">
+  <h2>{{ car.title }}</h2>
+  <p>{{ car.description }}</p>
+  <p>{{ car.price }} $ <span class="label label-success" *ngIf="car.status == 'true'"> |  Este Vehiculo esta a la venta</span></p>
+
+</div>

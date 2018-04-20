@@ -1,5 +1,11 @@
 <div class="col-md-12">
   <h2>{{ page_title }}</h2>
+  <div class="alert alert-success" *ngIf="status_car == 'success'">
+    {{ message_car }}
+  </div>
+  <div class="alert alert-danger" *ngIf="status_car == 'error'">
+    {{ message_car }}
+  </div>
   <form #carNew="ngForm" (ngSubmit)="onSubmit(carNew)" class="col-md-5">
     <div class="form-group">
       <label for="title">Titulo</label>
